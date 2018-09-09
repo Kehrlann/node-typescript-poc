@@ -1,0 +1,19 @@
+{
+  "name": "node-typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "git@garnier.wf",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/debug": "^0.0.30",
+    "@types/node": "^10.9.4",
+    "typescript": "^3.0.3"
+  },
+  "dependencies": {
+    "debug": "^3.1.0"
+  },
+  "scripts": {
+    "build": "tsc --build tsconfig.json",
+    "start": "yarn build && DEBUG=* node dist/index.js"
+  }
+}
