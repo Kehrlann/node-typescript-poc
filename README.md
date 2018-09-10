@@ -2,5 +2,7 @@
 Basic nodejs+typescript integration
 
 ## TODO
-[ ] Watch mode, building and running at the same time
-[ ] tslint
+[x] Watch mode, building and running at the same time
+[x] tslint
+[ ] unit tests
+[ ] sourcemap support
