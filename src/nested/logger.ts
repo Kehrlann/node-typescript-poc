@@ -1,5 +1,5 @@
-import * as loggers from "debug";
-import { IDebugger } from "debug";
+import * as loggers from 'debug';
+type IDebugger = loggers.IDebugger;
 
 export function getLogger(name: string): IDebugger {
   return loggers(`test-app:${name}`);
