@@ -6,14 +6,19 @@
   "license": "MIT",
   "devDependencies": {
     "@types/debug": "^0.0.30",
+    "@types/express": "^4.16.0",
     "@types/node": "^10.9.4",
+    "nodemon": "^1.18.4",
+    "tslint": "^5.11.0",
     "typescript": "^3.0.3"
   },
   "dependencies": {
-    "debug": "^3.1.0"
+    "debug": "^3.1.0",
+    "express": "^4.16.3"
   },
   "scripts": {
     "build": "tsc --build tsconfig.json",
-    "start": "yarn build && DEBUG=* node dist/index.js"
+    "build-and-run": "yarn build && DEBUG=test-app:* node dist/index.js",
+    "watch": "nodemon -e .ts --exec 'yarn build-and-run'"
   }
 }
