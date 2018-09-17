@@ -5,8 +5,9 @@ greet('new app');
 
 const app = express();
 app.get('/', (req, res, next) => {
-  greet(req.query.name || 'world');
-  res.send('Hello !');
+  const name = req.query.name || 'world';
+  greet(name);
+  res.send(`Hello ${name} !`);
 });
 
 app.listen(3000);

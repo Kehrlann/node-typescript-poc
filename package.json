@@ -9,6 +9,7 @@
     "@types/express": "^4.16.0",
     "@types/node": "^10.9.4",
     "backend-tslint-rules": "^1.4.0",
+    "concurrently": "^4.0.1",
     "nodemon": "^1.18.4",
     "tslint": "^5.11.0",
     "typescript": "^3.0.3"
@@ -19,8 +20,9 @@
   },
   "scripts": {
     "build": "tsc --build tsconfig.json",
-    "build-and-run": "yarn build && DEBUG=test-app:* node dist/index.js",
-    "watch": "nodemon -e .ts --exec 'yarn build-and-run'",
+    "start": "DEBUG=test-app:* nodemon dist/index.js",
+    "prewatch": "yarn build",
+    "watch": "concurrently \"yarn build --watch\" \"yarn start\"",
     "lint": "yarn tslint -p tsconfig.json"
   }
 }
